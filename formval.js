@@ -17,7 +17,6 @@ function validateForm() {
     var id = document.forms["myForm"]["id"].value;
 
     var cUpper = 0;
-    var cLower = 0;
     var cNumber = 0;
 
     if (name == "") {
@@ -26,7 +25,7 @@ function validateForm() {
     }
 
     if(emailChBox) {
-        if( !(/\S+@\S+\.\S+/.test(email)) ) { // if regex check false
+        if( !(/\S+@\S+\.\S+/.test(email)) ) { // if regex check for email format returns false
             alert("Improper email format.");
             return false;
         }
@@ -43,11 +42,9 @@ function validateForm() {
     else {
         for(i = 0; i < pass.length; i++)
         {
-            if('A' <= pass[i] && pass[i] <= 'Z') // check if you have an uppercase
+            if('A' <= pass[i] && pass[i] <= 'Z') // check if uppercase
                 cUpper++;
-            if('a' <= pass[i] && pass[i] <= 'z') // check if you have a lowercase
-                cLower++;
-            if('0' <= pass[i] && pass[i] <= '9') // check if you have a numeric
+            if('0' <= pass[i] && pass[i] <= '9') // check if numeric
                 cNumber++;
         }
         if(cUpper == 0) {
@@ -75,7 +72,7 @@ function validateForm() {
 function verifyForm(name, pass, id) {
     for(i = 0; i < realtors.length; i++) {
         if(realtors[i][0] == name && realtors[i][1] == pass && realtors[i][2] == id) {
-            alert("Welcome!" + transactionType);
+            alert("Welcome! You have selected \"" + transactionType.toLowerCase() + ".\"");
             return true;
         }
     }
@@ -85,6 +82,12 @@ function verifyForm(name, pass, id) {
 
 function doChecked(checkboxElem) {
     emailChBox = checkboxElem.checked;
+    if(emailChBox) {
+        document.getElementById("emailLabel").setAttribute("class","red");
+    }
+    else {
+        document.getElementById("emailLabel").setAttribute("class","red invis");
+    }
 }
 
 function doSelected(selectElem) {
