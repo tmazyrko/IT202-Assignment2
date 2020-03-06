@@ -1,0 +1,40 @@
+html{
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+form {
+    background-color: #bad5dc;
+    border: 3px solid #1b1b1b;
+    padding: 10px;
+    width: 360px;
+}
+
+label {
+    line-height: 24px;
+}
+
+p {
+    padding: 2px;
+    margin: 0 0 10px 0;
+    background-color: #426e6b;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.wide {
+    width: 350px;
+}
+
+.red {
+    color: crimson;
+}
+
+.invis {
+    visibility: hidden;
+}
