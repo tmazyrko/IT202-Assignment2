@@ -3,35 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>HHR - User Login</title>
+    <link rel="stylesheet" href="main.css">
     <script src="formval.js"></script>
 </head>
 <body>
-    <form name="myForm" onsubmit="return validateForm()">
-        <label for="name">Realtor Name:</label><br>
-        <input type="text" id="name" name="name"><br>
+    <div class="container">
+        <form name="myForm" onsubmit="return validateForm()">
+            <p>HOUSE HUNTER REALTY</p>
 
-        <label for="email">Realtor Email:</label><br>
-        <input type="text" id="email" name="email"><br>
+            <label for="name">Realtor Name:</label>
+            <label for="name" class="red">REQUIRED</label><br>
+            <input type="text" id="name" name="name" class="wide"><br>
 
-        <label for="pass">Realtor Password:</label><br>
-        <input type="password" id="pass" name="pass"><br>
+            <label for="email">Realtor Email:</label>
+            <label for="email" id="emailLabel" class="red invis">REQUIRED</label><br>
+            <input type="text" id="email" name="email" class="wide"><br>
 
-        <label for="id">Realtor ID:</label><br>
-        <input type="number" id="id" name="id"><br>
+            <label for="pass">Realtor Password:</label>
+            <label for="pass" class="red">REQUIRED</label><br>
+            <input type="password" id="pass" name="pass" class="wide"><br>
 
-        <input type="checkbox" id="emailreq" name="emailreq" onchange="doChecked(this)">
-        <label for="emailreq">Email a Transaction Confirmation</label><br>
+            <label for="id">Realtor ID:</label>
+            <label for="id" class="red">REQUIRED</label><br>
+            <input type="number" id="id" name="id" class="wide"><br>
 
-        <label for="transaction">Transaction type:</label>
-        <select id="transaction" onchange="doSelected(this)">
-            <option value="schedule">Schedule a showing</option>
-            <option value="remove">Remove a showing</option>
-            <option value="search">Search realtor's schedule</option>
-            <option value="register">Register new account</option>
-        </select><br>
+            <input type="checkbox" id="emailreq" name="emailreq" onchange="doChecked(this)">
+            <label for="emailreq">Email a Transaction Confirmation</label><br>
 
-        <input type="submit" value="Continue">
+            <label for="transaction">Transaction type:</label>
+            <select id="transaction" onchange="doSelected(this)">
+                <option value="schedule">Schedule a showing</option>
+                <option value="remove">Remove a showing</option>
+                <option value="search">Search realtor's schedule</option>
+                <option value="register">Register new account</option>
+            </select><br>
 
-    </form>
+            <input type="submit" value="Continue">
+
+        </form>
+    </div>
 </body>
 </html>
