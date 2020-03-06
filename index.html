@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>HHR - User Login</title>
+    <script src="formval.js"></script>
 </head>
 <body>
+    <form name="myForm" onsubmit="return validateForm()">
+        <label for="name">Realtor Name:</label><br>
+        <input type="text" id="name" name="name"><br>
 
+        <label for="email">Realtor Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+
+        <label for="pass">Realtor Password:</label><br>
+        <input type="password" id="pass" name="pass"><br>
+
+        <label for="id">Realtor ID:</label><br>
+        <input type="number" id="id" name="id"><br>
+
+        <input type="checkbox" id="emailreq" name="emailreq" onchange="doChecked(this)">
+        <label for="emailreq">Email a Transaction Confirmation</label><br>
+
+        <label for="transaction">Transaction type:</label>
+        <select id="transaction" onchange="doSelected(this)">
+            <option value="schedule">Schedule a showing</option>
+            <option value="remove">Remove a showing</option>
+            <option value="search">Search realtor's schedule</option>
+            <option value="register">Register new account</option>
+        </select><br>
+
+        <input type="submit" value="Continue">
+
+    </form>
 </body>
 </html>
